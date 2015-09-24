@@ -26,7 +26,10 @@ seed_json("#{Rails.root}/public/website2.json")
 
 list = []
 ExamList.all.each do |examlist|
-  list << examlist.exam_title
-  list << examlist.exam_code
+  if examlist.exam_code
+    list << "#{examlist.exam_code}:#{examlist.exam_title}"
+  else
+    list << examlist.exam_title
+  end
 end
 File.open("#{Rails.root}/public/autocomplete.yml", 'w') {|f| f.write list.to_yaml }
