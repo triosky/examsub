@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Vendor Name</th>
+      <th>Code</th>
+      <th>Language</th>
+      <th>Title</th>
+      <th>Time</th>
+      <th>Cost</th>
+      <th>Submit Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% result.each do |r| %>
+      <tr>
+        <td><%= r.vendor_name %></td>
+        <td><%= r.exam_code %></td>
+        <td><%= r.exam_lang %></td>
+        <td><%= r.exam_title %></td>
+        <td><%= r.exam_time %></td>
+        <td><%= r.exam_cost %></td>
+        <td><%= r.sub_count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

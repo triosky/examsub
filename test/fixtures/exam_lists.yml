@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ventor_name: MyString
+  exam_code: MyString
+  exam_lang: MyString
+  exam_title: MyString
+  exam_time: MyString
+  exam_cost: MyString
+  sub_count: 1
+
+two:
+  ventor_name: MyString
+  exam_code: MyString
+  exam_lang: MyString
+  exam_title: MyString
+  exam_time: MyString
+  exam_cost: MyString
+  sub_count: 1

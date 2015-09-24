@@ -1,0 +1,26 @@
+<script type="text/javascript" charset="utf-8">
+
+  <% list = YAML.load(File.open("public/autocomplete.yml")) %>
+
+  $(function() {
+    $("#title").autocomplete({
+      source: <%=raw list %>
+    });
+  });
+</script>
+
+<div class="container">
+  <div class="row" style="margin-top: 50px;">
+    <h2 style="margin-bottom: 30px;">Submit Form</h2>
+    <%= form_tag("/home/submit", :method => "post", :remote => true) do %>
+      <%= text_field_tag :title, "", :class => "form-control" %>
+      <%= submit_tag "Submit", :class => "btn btn-default col-md-2 pull-right", :style => "margin-top: 30px;" %>
+    <% end %>
+  </div>
+  <div class="row" style="margin-top: 50px;">
+    <h2 style="margin-bottom: 30px;">Result Table</h2>
+    <div class="result" id="result">
+      <%= render partial: "result", :locals => {result: @result} %>
+    </div>
+  </div>
+</div>
