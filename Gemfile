@@ -49,6 +49,7 @@ end
 gem 'pg'
 gem 'json'
 gem 'bootstrap-sass', '~> 3.3.5'
+gem "font-awesome-rails"
 
 group :production do
   gem 'rails_12factor'

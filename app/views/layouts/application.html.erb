@@ -10,10 +10,122 @@
   <script src="https://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
   <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.js"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.3/jquery.backstretch.min.js"></script>
-  <script src="https://www.bitstorm.org/jquery/shadow-animation/jquery.animate-shadow.js"></script>
 
 </head>
 <body>
+
+  <header id="header" class="headroom animated navbar navbar-fixed-top headroom--pinned headroom--top" role="banner">
+    <div class="container-fluid">
+      <a href="/" title="CramMedia" class="pull-left header-logo"><%= image_tag("gfx-logo.png", :alt => 'CramMedia') %></a>
+      <form name="searchSite" method="post" action="/Product/Search" class="form-search pull-left">
+        <fieldset>
+          <span class="twitter-typeahead" style="position: relative; display: inline-block; direction: ltr;"><input type="text" class="form-control tt-hint" readonly="" autocomplete="off" spellcheck="false" tabindex="-1" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);"><input type="text" id="searchExam" name="searchExam" placeholder="商品を検索" class="form-control tt-input" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: メイリオ, Meiryo, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"><div class="tt-dataset-best-pictures"></div></span></span>
+          <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+        </fieldset>
+      </form>
+
+      <ul class="nav pull-right nav-top-right-links clearfix">
+        <li><a href="/Member"><i class="fa fa-user fa-fw"></i><span>                 My アカウント
+</span></a></li>
+        <li><a href="/Cart"><i class="fa fa-shopping-cart fa-fw"></i><span>カートを見る </span></a></li>
+        <li><a href="/Support"><i class="fa fa-question-circle fa-fw"></i><span>お問い合わせ</span></a></li>
+      </ul>
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <div class="toggle-default">
+            <i class="fa fa-bars"></i><span>商品一覧</span>
+          </div>
+          <div class="toggle-open">
+            <i class="fa fa-times"></i><span>クローズ</span>
+          </div>
+        </button>
+      </div>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="/PMI/c/191" class="dropdown-toggle" data-toggle="dropdown">PMI</a>
+          <ul class="dropdown-menu">
+            <li><a href="/PMP/c/193" title="PMP">PMP</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="/ITIL/c/247" class="dropdown-toggle" data-toggle="dropdown">ITIL</a>
+          <ul class="dropdown-menu">
+            <li><a href="/EX0-001-ITIL-Foundation-syllabus-2011/p/247/204" title="EX0-001">EX0-001</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="/Android/c/338" class="dropdown-toggle" data-toggle="dropdown">Android</a>
+          <ul class="dropdown-menu">
+            <li><a href="/OA0-001-Androidアプリケーション技術者認定試験ベーシック/p/338/187" title="OA0-001">OA0-001</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="/VCP/c/284" class="dropdown-toggle" data-toggle="dropdown">VMWare</a>
+          <ul class="dropdown-menu">
+            <li><a href="/VCA-DCV/c/373">VCA-DCV</a></li>
+            <li><a href="/VCP-DCV/c/387">VCP-DCV</a></li>
+            <li><a href="/VCP-NV/c/398">VCP-NV</a></li>
+            <li><a href="/VCP-DT/c/353">VCP-DT</a></li>
+            <li><a href="/VCP6-DCV/c/401">VCP6-DCV</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="/Microsoft-MCP/c/2" class="dropdown-toggle" data-toggle="dropdown">Microsoft (MCP)</a>
+          <ul class="dropdown-menu">
+            <li><a href="/MCSE-2012/c/359">MCSE 2012</a></li>
+            <li><a href="/MCSA/c/348">MCSA</a></li>
+            <li><a href="/MCTS/c/222">MCTS</a></li>
+            <li><a href="/MCITP/c/223">MCITP</a></li>
+            <li><a href="/MCSE-2003/c/17">MCSE 2003</a></li>
+            <li><a href="/MCSA-2003/c/18">MCSA 2003</a></li>
+            <li><a href="/MCDST/c/119">MCDST</a></li>
+            <li><a href="/MCDBA/c/11">MCDBA</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="/CISCO/c/3" class="dropdown-toggle" data-toggle="dropdown">Cisco</a>
+          <ul class="dropdown-menu">
+            <li><a href="/CCENT/c/206">CCENT</a></li>
+            <li><a href="/CCNA-Routing-and-Switching/c/365">CCNA Routing and Switching</a></li>
+            <li><a href="/CCDA/c/114">CCDA</a></li>
+            <li><a href="/CCNP/c/84">CCNP</a></li>
+            <li><a href="/CCDP/c/86">CCDP</a></li>
+            <li><a href="/CCIP/c/85">CCIP</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="/Linux/c/6" class="dropdown-toggle" data-toggle="dropdown">Linux</a>
+          <ul class="dropdown-menu">
+            <li><a href="/LPIC-1/c/77">LPIC - 1</a></li>
+            <li><a href="/LPIC-2/c/78">LPIC - 2</a></li>
+            <li><a href="/LPIC-3/c/225">LPIC - 3</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="/Oracle/c/4" class="dropdown-toggle" data-toggle="dropdown">Oracle</a>
+          <ul class="dropdown-menu">
+            <li><a href="/Oracle-Certified-Professional-MySQL-5-6-Database-Administrator/c/394">OCP MySQL 5.6 DB Admin</a></li>
+            <li><a href="/Oracle-Certified-Java-Programmer-Silver-SE-7/c/371">Oracle Certified Java Programmer, Silver SE 7</a></li>
+            <li><a href="/Oracle認定Javaアソシエイツ（OCJ-A,-旧SJC-A）/c/294">Oracle認定Javaアソシエイツ（OCJ-A, 旧SJC-A）</a></li>
+            <li><a href="/Oracle認定Javaプログラマ（OCJ-P,-旧SJC-P）/c/295">Oracle認定Javaプログラマ（OCJ-P, 旧SJC-P）</a></li>
+            <li><a href="/Oracle認定Oracle-Solaris-10システム管理者（OCP,-旧SCSA）/c/296">Oracle認定Oracle Solaris 10システム管理者（OCP, 旧SCSA）</a></li>
+            <li><a href="/Oracle's-10G-Sliver/c/136">Oracle's 10G (Sliver)</a></li>
+            <li><a href="/Oracle's-10G-Gold/c/138">Oracle's 10G (Gold)</a></li>
+            <li><a href="/Oracle's-11G-Bronze/c/340">Oracle's 11G Bronze</a></li>
+            <li><a href="/Oracle-11G-Silver/c/264">Oracle 11G Silver</a></li>
+            <li><a href="/Oracle-11G-Gold/c/217">Oracle 11G Gold</a></li>
+            <li><a href="/Oracle-12C-Bronze/c/377">Oracle 12C Bronze</a></li>
+            <li><a href="/Oracle-12C-Gold/c/396">Oracle 12C Silver</a></li>
+            <li><a href="/Oracle-12C-Gold/c/379">Oracle 12C Gold</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </nav>
+  </header>
 
 <%= yield %>
 

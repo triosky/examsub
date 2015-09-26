@@ -23,9 +23,10 @@ ActiveRecord::Schema.define(version: 20150923040046) do
     t.string   "exam_title"
     t.string   "exam_time"
     t.string   "exam_cost"
+    t.text     "user_ids",    default: ""
     t.integer  "sub_count",   default: 0
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
 end

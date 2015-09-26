@@ -7,6 +7,7 @@ class CreateExamLists < ActiveRecord::Migration
       t.string :exam_title
       t.string :exam_time
       t.string :exam_cost
+      t.text   :user_ids, :default => ""
       t.integer :sub_count, :default => 0
 
       t.timestamps null: false

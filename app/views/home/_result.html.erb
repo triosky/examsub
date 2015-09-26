@@ -1,26 +1,29 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Vendor Name</th>
-      <th>Code</th>
-      <th>Language</th>
-      <th>Title</th>
-      <th>Time</th>
-      <th>Cost</th>
-      <th>Submit Count</th>
+      <th>試験番号</th>
+      <th>試験名</th>
+      <th>言語</th>
+      <th>ベンダー</th>
+      <th>リクエスト数</th>
     </tr>
   </thead>
   <tbody>
     <% result.each do |r| %>
       <tr>
-        <td><%= r.vendor_name %></td>
         <td><%= r.exam_code %></td>
-        <td><%= r.exam_lang %></td>
         <td><%= r.exam_title %></td>
-        <td><%= r.exam_time %></td>
-        <td><%= r.exam_cost %></td>
+        <td><%= r.exam_lang %></td>
+        <td><%= r.vendor_name %></td>
         <td><%= r.sub_count %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<script type="text/javascript">
+  <% if available == 0 %>
+    $("#notification-error").html("You've already submitted this exam.");
+  <% else %>
+    $("#notification-error").html("");
+  <% end %>
+</script>

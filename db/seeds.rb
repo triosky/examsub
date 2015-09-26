@@ -27,7 +27,11 @@ seed_json("#{Rails.root}/public/website2.json")
 list = []
 ExamList.all.each do |examlist|
   if examlist.exam_code
-    list << "#{examlist.exam_code}:#{examlist.exam_title}"
+    if examlist.exam_lang
+      list << "#{examlist.exam_code}:#{examlist.exam_lang}:#{examlist.exam_title}"
+    else
+      list << "#{examlist.exam_code}:#{examlist.exam_title}"
+    end
   else
     list << examlist.exam_title
   end

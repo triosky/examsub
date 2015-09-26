@@ -11,16 +11,19 @@
 
 <div class="container">
   <div class="row" style="margin-top: 50px;">
-    <h2 style="margin-bottom: 30px;">Submit Form</h2>
+    <h1 style="margin-bottom: 30px;">新規問題集リクエストフォーム</h1>
+    <h2 style="margin-bottom: 30px;">試験番号を入力すると候補が表示されますので、選択してリクエストください。
+      <br>できる限りご希望にお応えさせていただきます！</h2>
     <%= form_tag("/home/submit", :method => "post", :remote => true) do %>
       <%= text_field_tag :title, "", :class => "form-control" %>
-      <%= submit_tag "Submit", :class => "btn btn-default col-md-2 pull-right", :style => "margin-top: 30px;" %>
+      <%= submit_tag "リクエスト", :class => "btn btn-default col-md-2 pull-right", :style => "margin-top: 30px;" %>
     <% end %>
   </div>
+  <div id="notification-error" class="notice notice-warning" style="color: red;"></div>
   <div class="row" style="margin-top: 50px;">
-    <h2 style="margin-bottom: 30px;">Result Table</h2>
+    <h2 style="margin-bottom: 30px;">現在のリクエスト状況</h2>
     <div class="result" id="result">
-      <%= render partial: "result", :locals => {result: @result} %>
+      <%= render partial: "result", :locals => {result: @result, available: 1} %>
     </div>
   </div>
 </div>
